@@ -1,0 +1,13 @@
+{
+  "db": {
+    "host": " atlas-3d8jvd-shard-0/dbcluster",
+    "port": 27017,
+    "url": "mongodb+srv://electronjhon:Angel123@dbcluster.8hptk.mongodb.net/db_webschool?retryWrites=true&w=majority",
+    "database": "db_webschool",
+    "password": "Angel123",
+    "name": "db",
+    "user": "electronjhon",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

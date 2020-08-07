@@ -3,18 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './modules/navegation/navbar/navbar.component';
-import { LoginComponent } from './modules/auth/login/login.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DefaultModule } from './layouts/default/default.module';
+import { Page404Component } from './error/page404/page404.component';
+import { MaterialModule } from './material.module';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LoginComponent
+    Page404Component,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DefaultModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

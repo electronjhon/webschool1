@@ -38,5 +38,9 @@
   "colegio": {
     "dataSource": "db",
     "public": true
+  },
+  "curso": {
+    "dataSource": "db",
+    "public": true
   }
 }

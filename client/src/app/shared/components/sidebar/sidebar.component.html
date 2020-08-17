@@ -1,7 +1,7 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h3>Jhon Vivas</h3>
+            <h3>{{user.username}}</h3>
         </div>
         <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Usuario">
     </div>
@@ -46,12 +46,11 @@
             <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/cursos">Cursos</a>
         </mat-expansion-panel>
     </mat-accordion>
-
     <mat-divider></mat-divider>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+    <button mat-menu-item (click)="onLogout()">
         <mat-icon>exit_to_app</mat-icon>
         Salir
-    </a>
+    </button>
 
 </mat-nav-list>

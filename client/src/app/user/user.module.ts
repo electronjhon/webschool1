@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswComponent } from './components/forgot-passw/forgot-passw.component';
 import { MaterialModule } from '../material.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
     ForgotPasswComponent
-  ]
+  ],
+  providers: [],
 })
 export class UserModule { }

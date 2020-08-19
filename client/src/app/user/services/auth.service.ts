@@ -9,6 +9,8 @@ import { UserInterface } from '../user.interface';
   providedIn: 'root'
 })
 export class AuthService {
+  users: Observable<any>;
+  user: Observable<any>;
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,7 @@ export class AuthService {
   });
 
   registerUser(username: string, email: string, password: string){
-    const url_api = "http://localhost:3000/api/Users"
+    const url_api = "http://localhost:3000/api/avatars"
     return this.http
     .post<UserInterface>(
       url_api, 
@@ -32,7 +34,7 @@ export class AuthService {
   }
 
   loginUser(email: string, password: string): Observable<any>{
-    const url_api = "http://localhost:3000/api/Users/login?include=user"
+    const url_api = "http://localhost:3000/api/avatars/login?include=user"
     return this.http
     .post<UserInterface>(
       url_api, 
@@ -70,10 +72,15 @@ export class AuthService {
 
   logoutUser() {
     let accessToken = localStorage.getItem("accessToken");
-    const url_api = `http://localhost:3000/api/Users/logout?access_token=${accessToken}`;
+    const url_api = `http://localhost:3000/api/avatars/logout?access_token=${accessToken}`;
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
     return this.http.post<UserInterface>(url_api, {headers: this.headers});
+  }
+
+  getUserById(id: string) {
+    const url_api = `http://localhost:3000/api/avatars/${id}`;
+    return(this.user = this.http.get(url_api));
   }
 
 }

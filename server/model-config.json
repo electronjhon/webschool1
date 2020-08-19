@@ -42,5 +42,9 @@
   "curso": {
     "dataSource": "db",
     "public": true
+  },
+  "avatar": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { Page404Component } from './error/page404/page404.component';
 import { MaterialModule } from './material.module';
+import { TruncateTextPipe } from './pipes/truncate-text.pipe'
 
 
 
@@ -15,7 +16,9 @@ import { MaterialModule } from './material.module';
   declarations: [
     AppComponent,
     Page404Component,
-    
+    TruncateTextPipe
+   
+        
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { MaterialModule } from './material.module';
     DefaultModule,
     MaterialModule
   ],
+  entryComponents:[],
   providers: [],
   bootstrap: [AppComponent]
 })

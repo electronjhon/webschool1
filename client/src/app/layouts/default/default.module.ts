@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
  
 //Modules
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -12,10 +14,15 @@ import { MaterialModule } from 'src/app/material.module';
 //Components
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/components/dashboard/dashboard.component';
-import { CursosComponent } from '../../modules/components/cursos/cursos.component';
+import { CursosComponent } from '../../modules/components/cursos/cursos.component'
+
 
 //Services
 import { ApiCursosService } from 'src/app/modules/services/api-cursos.service';
+
+
+
+//external
 
 
 
@@ -24,7 +31,8 @@ import { ApiCursosService } from 'src/app/modules/services/api-cursos.service';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    CursosComponent,
+    CursosComponent
+    
   ],
   imports: [
     CommonModule,
@@ -32,7 +40,8 @@ import { ApiCursosService } from 'src/app/modules/services/api-cursos.service';
     SharedModule,
     UserModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiCursosService],
 })

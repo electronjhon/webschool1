@@ -1,0 +1,20 @@
+{
+  "name": "avatar",
+  "plural": "avatars",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "foto": {
+      "type": "string",
+      "required": true,
+      "default": "./assets/check-user.png"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

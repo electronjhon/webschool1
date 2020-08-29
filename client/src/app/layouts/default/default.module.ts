@@ -31,7 +31,8 @@ import { ApiCursosService } from 'src/app/modules/services/api-cursos.service';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    CursosComponent
+    CursosComponent,
+   
     
   ],
   imports: [
@@ -43,6 +44,7 @@ import { ApiCursosService } from 'src/app/modules/services/api-cursos.service';
     HttpClientModule,
     FormsModule
   ],
+  
   providers: [ApiCursosService],
 })
 export class DefaultModule { }

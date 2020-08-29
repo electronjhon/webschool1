@@ -8,16 +8,18 @@ import { DefaultModule } from './layouts/default/default.module';
 import { Page404Component } from './error/page404/page404.component';
 import { MaterialModule } from './material.module';
 import { TruncateTextPipe } from './pipes/truncate-text.pipe'
-
-
+import { ModalComponent } from './modules/components/modal/modal.component';
+import { NvocursoComponent } from './modules/components/cursos/nvocurso/nvocurso.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     Page404Component,
-    TruncateTextPipe
-   
+    TruncateTextPipe,
+    ModalComponent,
+    NvocursoComponent  
         
   ],
   imports: [
@@ -25,9 +27,11 @@ import { TruncateTextPipe } from './pipes/truncate-text.pipe'
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  entryComponents:[],
+  entryComponents: [ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

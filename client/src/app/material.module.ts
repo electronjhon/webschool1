@@ -93,7 +93,8 @@ import {MatTreeModule} from '@angular/material/tree';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    
   ],
 })
 export class MaterialModule {}

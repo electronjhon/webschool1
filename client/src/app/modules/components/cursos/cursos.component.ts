@@ -3,6 +3,8 @@ import { ApiCursosService } from '../../services/api-cursos.service';
 import { CursoInterface } from '../../curso-interface';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-cursos',
@@ -11,12 +13,12 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class CursosComponent implements OnInit, AfterViewInit {
   ELEMENT_DATA: CursoInterface[];
-  displayedColumns: string[] = ['nombre', 'director'];
+  displayedColumns: string[] = ['nombre', 'director', 'actions'];
   dataSource = new MatTableDataSource<CursoInterface>(this.ELEMENT_DATA);
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private apiCursosService: ApiCursosService) { }
+  constructor(private apiCursosService: ApiCursosService, public dialog: MatDialog) { }
 
 
   ngOnInit() {
@@ -35,6 +37,24 @@ export class CursosComponent implements OnInit, AfterViewInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  onEditCurso(curso: CursoInterface) {
+    console.log('Editar curso', curso);
+  }
+
+  onDeleteCurso(curso: CursoInterface) {
+    console.log('Borrar curso', curso);
+  }
   
+  onNewCurso() {
+    this.openDialog();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`resultaddo ${result}`);
+    })
+  }
 
 }

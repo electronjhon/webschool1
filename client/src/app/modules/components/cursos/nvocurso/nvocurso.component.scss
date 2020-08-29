@@ -1,0 +1,19 @@
+.nvocurso-container {
+    display: flex;
+    flex-direction: column;
+    form {
+        margin-bottom: 20px;
+    }
+    input.mat-flat-button{
+        width: 100%;
+        background: rgb(0, 183, 255);
+        &:hover{
+            background:  rgb(0, 174, 255);
+        }
+    }
+
+    mat-form-field{
+        width: 100%;
+    }
+
+}
